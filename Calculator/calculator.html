@@ -1,0 +1,80 @@
+<html><head>
+<script src='calculator.js' type="text/javascript"></script>
+</head>
+<body>
+
+<FORM name='Calculator'>
+<div align='center'>
+	<table width='30%' border='4'>
+		<!-- TOP PANEL -->
+		<tr><td colspan='2' align='center'>Dillon's JS calculator<br>
+		    <input type='text' maxlength='40' size='30'name='Display'>
+		    </td></tr>
+		<!-- END of TOP PANEL -->
+		<tr>
+			<!-- LEFT PANEL -->
+			<td>
+				<table>
+					<tr>
+						<td><input type='button' value='7' OnClick='displayDigit("7")'>
+							</td>
+						<td><input type='button' value='8' OnClick='displayDigit("8")'>
+							</td>
+						<td><input type='button' value='9' OnClick='displayDigit("9")'>
+							</td>
+					</tr>
+					<tr>
+						<td><input type='button' value='4' OnClick='displayDigit("4")'>
+							</td>
+						<td><input type='button' value='5' OnClick='displayDigit("5")'>
+							</td>
+						<td><input type='button' value='6' OnClick='displayDigit("6")'>
+							</td>
+					</tr>
+					<tr>
+						<td><input type='button' value='1' OnClick='displayDigit("1")'>
+							</td>
+						<td><input type='button' value='2' OnClick='displayDigit("2")'>
+							</td>
+						<td><input type='button' value='3' OnClick='displayDigit("3")'>
+							</td>
+					</tr>
+					<tr>
+						<td><input type='button' value='+/-' 
+							OnClick='changePlusMinus()'></td>
+						<td><input type='button' value='0' OnClick='displayDigit("0")'>
+							</td>
+						<td><input type='button' value='.' OnClick='displayDot()'></td>
+					</tr>
+				</table>
+			</td>
+			<!-- END of LEFT PANEL -->
+			<!-- RIGHT PANEL -->
+			<td>
+				<table>
+					<tr>
+						<td><input type='button' value='C' OnClick='clear()'></td>
+						<td><input type='button' value='AC' OnClick='allClear()'></td>
+					</tr>
+					<tr>
+						<td><input type='button' value='*' OnClick='operate("*")'></td>
+						<td><input type='button' value='/' OnClick='operate("/")'></td>
+					</tr>
+					<tr>
+						<td><input type='button' value='+' OnClick='operate("+")'></td>
+						<td><input type='button' value='-' OnClick='operate("-")'></td>
+					</tr>
+					<tr>
+						<td><input type='button' value='=' OnClick='calculate()'></td>
+						<td><input type='button' value='exp' 
+							OnClick='doExponent()'></td>
+					</tr>
+				</table>
+			</td>
+		  <!-- END of RIGHT PANEL -->
+	</table>
+</div>
+</FORM>
+
+</body>
+</html>

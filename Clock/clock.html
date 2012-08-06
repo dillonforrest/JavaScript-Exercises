@@ -1,0 +1,38 @@
+<html><head>
+<script type="text/javascript">
+<!--
+
+function updateClock () {
+	var now = new Date ();
+
+	var hour = now.getHours();
+	var minute = now.getMinutes();
+	var second = now.getSeconds();
+
+	// Add leading zeroes to minutes and seconds if <10
+	minute = (minute < 10 ? 0 : '') + minute;
+	second = (second < 10 ? 0 : '') + second;
+
+	// Add am/pm
+	var amOrPm = (hour < 12) ? 'am' : 'pm';
+
+	// Format hours to 12-hr clock and remove hour '0' for hour '12'
+	hour = (hour > 12) ? hour - 12 : hour;
+	hour = (hour == 0) ? 12 : hour;
+
+	// Concatenate everything into the full time
+	var time = hour + ':' + minute + ':' + second + amOrPm;
+
+	document.getElementById("clock").firstChild.nodeValue = time;
+};
+
+// -->
+</script>
+</head>
+
+<body onload="updateClock(); setInterval('updateClock()', 1000)">
+
+<span id="clock">&nbsp;</span>
+
+</body>
+</html>
