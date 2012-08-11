@@ -1,0 +1,1535 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- ----------------------------------------------------------------
+     Copyright 1998-2009, Andrew D. Birrell.
+     This file is mechanically generated.  See ./source.php
+     ---------------------------------------------------------------- -->
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<SCRIPT TYPE="text/javascript" SRC="minesweeper.js"></SCRIPT>
+<LINK HREF="../parts/home.css" REL=stylesheet>
+<LINK HREF="minesweeper.css" REL=stylesheet>
+<TITLE>Minesweeper in Javascript</TITLE>
+</HEAD>
+<BODY onload="init(30, 480, 99)">
+<TABLE CLASS=sq ID=sqTable onmouseup="return false">
+<TR><TD CLASS=score COLSPAN=30>
+  <DIV CLASS=counter ID=mines>&nbsp;</DIV>
+  <DIV CLASS=counter ID=timer>&nbsp;</DIV>
+  <TABLE class=smiley CELLSPACING=0><TR><TD CLASS=smiley
+    onmousedown="return clickSmiley(event)"><IMG ID=smiley
+    WIDTH=24 HEIGHT=24 SRC="erasing.gif" ALT=""></TD></TR></TABLE>
+</TD></TR>
+<TR>
+<TD CLASS=sq ID="sq-0"
+  onmousedown="return clickSq(event,0)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-1"
+  onmousedown="return clickSq(event,1)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-2"
+  onmousedown="return clickSq(event,2)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-3"
+  onmousedown="return clickSq(event,3)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-4"
+  onmousedown="return clickSq(event,4)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-5"
+  onmousedown="return clickSq(event,5)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-6"
+  onmousedown="return clickSq(event,6)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-7"
+  onmousedown="return clickSq(event,7)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-8"
+  onmousedown="return clickSq(event,8)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-9"
+  onmousedown="return clickSq(event,9)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-10"
+  onmousedown="return clickSq(event,10)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-11"
+  onmousedown="return clickSq(event,11)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-12"
+  onmousedown="return clickSq(event,12)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-13"
+  onmousedown="return clickSq(event,13)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-14"
+  onmousedown="return clickSq(event,14)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-15"
+  onmousedown="return clickSq(event,15)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-16"
+  onmousedown="return clickSq(event,16)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-17"
+  onmousedown="return clickSq(event,17)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-18"
+  onmousedown="return clickSq(event,18)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-19"
+  onmousedown="return clickSq(event,19)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-20"
+  onmousedown="return clickSq(event,20)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-21"
+  onmousedown="return clickSq(event,21)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-22"
+  onmousedown="return clickSq(event,22)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-23"
+  onmousedown="return clickSq(event,23)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-24"
+  onmousedown="return clickSq(event,24)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-25"
+  onmousedown="return clickSq(event,25)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-26"
+  onmousedown="return clickSq(event,26)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-27"
+  onmousedown="return clickSq(event,27)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-28"
+  onmousedown="return clickSq(event,28)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-29"
+  onmousedown="return clickSq(event,29)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-30"
+  onmousedown="return clickSq(event,30)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-31"
+  onmousedown="return clickSq(event,31)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-32"
+  onmousedown="return clickSq(event,32)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-33"
+  onmousedown="return clickSq(event,33)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-34"
+  onmousedown="return clickSq(event,34)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-35"
+  onmousedown="return clickSq(event,35)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-36"
+  onmousedown="return clickSq(event,36)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-37"
+  onmousedown="return clickSq(event,37)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-38"
+  onmousedown="return clickSq(event,38)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-39"
+  onmousedown="return clickSq(event,39)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-40"
+  onmousedown="return clickSq(event,40)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-41"
+  onmousedown="return clickSq(event,41)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-42"
+  onmousedown="return clickSq(event,42)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-43"
+  onmousedown="return clickSq(event,43)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-44"
+  onmousedown="return clickSq(event,44)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-45"
+  onmousedown="return clickSq(event,45)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-46"
+  onmousedown="return clickSq(event,46)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-47"
+  onmousedown="return clickSq(event,47)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-48"
+  onmousedown="return clickSq(event,48)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-49"
+  onmousedown="return clickSq(event,49)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-50"
+  onmousedown="return clickSq(event,50)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-51"
+  onmousedown="return clickSq(event,51)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-52"
+  onmousedown="return clickSq(event,52)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-53"
+  onmousedown="return clickSq(event,53)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-54"
+  onmousedown="return clickSq(event,54)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-55"
+  onmousedown="return clickSq(event,55)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-56"
+  onmousedown="return clickSq(event,56)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-57"
+  onmousedown="return clickSq(event,57)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-58"
+  onmousedown="return clickSq(event,58)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-59"
+  onmousedown="return clickSq(event,59)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-60"
+  onmousedown="return clickSq(event,60)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-61"
+  onmousedown="return clickSq(event,61)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-62"
+  onmousedown="return clickSq(event,62)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-63"
+  onmousedown="return clickSq(event,63)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-64"
+  onmousedown="return clickSq(event,64)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-65"
+  onmousedown="return clickSq(event,65)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-66"
+  onmousedown="return clickSq(event,66)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-67"
+  onmousedown="return clickSq(event,67)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-68"
+  onmousedown="return clickSq(event,68)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-69"
+  onmousedown="return clickSq(event,69)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-70"
+  onmousedown="return clickSq(event,70)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-71"
+  onmousedown="return clickSq(event,71)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-72"
+  onmousedown="return clickSq(event,72)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-73"
+  onmousedown="return clickSq(event,73)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-74"
+  onmousedown="return clickSq(event,74)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-75"
+  onmousedown="return clickSq(event,75)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-76"
+  onmousedown="return clickSq(event,76)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-77"
+  onmousedown="return clickSq(event,77)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-78"
+  onmousedown="return clickSq(event,78)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-79"
+  onmousedown="return clickSq(event,79)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-80"
+  onmousedown="return clickSq(event,80)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-81"
+  onmousedown="return clickSq(event,81)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-82"
+  onmousedown="return clickSq(event,82)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-83"
+  onmousedown="return clickSq(event,83)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-84"
+  onmousedown="return clickSq(event,84)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-85"
+  onmousedown="return clickSq(event,85)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-86"
+  onmousedown="return clickSq(event,86)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-87"
+  onmousedown="return clickSq(event,87)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-88"
+  onmousedown="return clickSq(event,88)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-89"
+  onmousedown="return clickSq(event,89)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-90"
+  onmousedown="return clickSq(event,90)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-91"
+  onmousedown="return clickSq(event,91)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-92"
+  onmousedown="return clickSq(event,92)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-93"
+  onmousedown="return clickSq(event,93)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-94"
+  onmousedown="return clickSq(event,94)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-95"
+  onmousedown="return clickSq(event,95)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-96"
+  onmousedown="return clickSq(event,96)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-97"
+  onmousedown="return clickSq(event,97)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-98"
+  onmousedown="return clickSq(event,98)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-99"
+  onmousedown="return clickSq(event,99)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-100"
+  onmousedown="return clickSq(event,100)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-101"
+  onmousedown="return clickSq(event,101)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-102"
+  onmousedown="return clickSq(event,102)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-103"
+  onmousedown="return clickSq(event,103)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-104"
+  onmousedown="return clickSq(event,104)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-105"
+  onmousedown="return clickSq(event,105)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-106"
+  onmousedown="return clickSq(event,106)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-107"
+  onmousedown="return clickSq(event,107)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-108"
+  onmousedown="return clickSq(event,108)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-109"
+  onmousedown="return clickSq(event,109)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-110"
+  onmousedown="return clickSq(event,110)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-111"
+  onmousedown="return clickSq(event,111)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-112"
+  onmousedown="return clickSq(event,112)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-113"
+  onmousedown="return clickSq(event,113)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-114"
+  onmousedown="return clickSq(event,114)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-115"
+  onmousedown="return clickSq(event,115)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-116"
+  onmousedown="return clickSq(event,116)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-117"
+  onmousedown="return clickSq(event,117)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-118"
+  onmousedown="return clickSq(event,118)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-119"
+  onmousedown="return clickSq(event,119)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-120"
+  onmousedown="return clickSq(event,120)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-121"
+  onmousedown="return clickSq(event,121)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-122"
+  onmousedown="return clickSq(event,122)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-123"
+  onmousedown="return clickSq(event,123)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-124"
+  onmousedown="return clickSq(event,124)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-125"
+  onmousedown="return clickSq(event,125)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-126"
+  onmousedown="return clickSq(event,126)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-127"
+  onmousedown="return clickSq(event,127)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-128"
+  onmousedown="return clickSq(event,128)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-129"
+  onmousedown="return clickSq(event,129)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-130"
+  onmousedown="return clickSq(event,130)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-131"
+  onmousedown="return clickSq(event,131)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-132"
+  onmousedown="return clickSq(event,132)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-133"
+  onmousedown="return clickSq(event,133)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-134"
+  onmousedown="return clickSq(event,134)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-135"
+  onmousedown="return clickSq(event,135)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-136"
+  onmousedown="return clickSq(event,136)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-137"
+  onmousedown="return clickSq(event,137)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-138"
+  onmousedown="return clickSq(event,138)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-139"
+  onmousedown="return clickSq(event,139)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-140"
+  onmousedown="return clickSq(event,140)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-141"
+  onmousedown="return clickSq(event,141)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-142"
+  onmousedown="return clickSq(event,142)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-143"
+  onmousedown="return clickSq(event,143)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-144"
+  onmousedown="return clickSq(event,144)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-145"
+  onmousedown="return clickSq(event,145)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-146"
+  onmousedown="return clickSq(event,146)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-147"
+  onmousedown="return clickSq(event,147)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-148"
+  onmousedown="return clickSq(event,148)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-149"
+  onmousedown="return clickSq(event,149)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-150"
+  onmousedown="return clickSq(event,150)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-151"
+  onmousedown="return clickSq(event,151)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-152"
+  onmousedown="return clickSq(event,152)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-153"
+  onmousedown="return clickSq(event,153)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-154"
+  onmousedown="return clickSq(event,154)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-155"
+  onmousedown="return clickSq(event,155)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-156"
+  onmousedown="return clickSq(event,156)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-157"
+  onmousedown="return clickSq(event,157)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-158"
+  onmousedown="return clickSq(event,158)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-159"
+  onmousedown="return clickSq(event,159)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-160"
+  onmousedown="return clickSq(event,160)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-161"
+  onmousedown="return clickSq(event,161)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-162"
+  onmousedown="return clickSq(event,162)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-163"
+  onmousedown="return clickSq(event,163)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-164"
+  onmousedown="return clickSq(event,164)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-165"
+  onmousedown="return clickSq(event,165)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-166"
+  onmousedown="return clickSq(event,166)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-167"
+  onmousedown="return clickSq(event,167)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-168"
+  onmousedown="return clickSq(event,168)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-169"
+  onmousedown="return clickSq(event,169)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-170"
+  onmousedown="return clickSq(event,170)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-171"
+  onmousedown="return clickSq(event,171)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-172"
+  onmousedown="return clickSq(event,172)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-173"
+  onmousedown="return clickSq(event,173)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-174"
+  onmousedown="return clickSq(event,174)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-175"
+  onmousedown="return clickSq(event,175)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-176"
+  onmousedown="return clickSq(event,176)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-177"
+  onmousedown="return clickSq(event,177)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-178"
+  onmousedown="return clickSq(event,178)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-179"
+  onmousedown="return clickSq(event,179)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-180"
+  onmousedown="return clickSq(event,180)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-181"
+  onmousedown="return clickSq(event,181)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-182"
+  onmousedown="return clickSq(event,182)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-183"
+  onmousedown="return clickSq(event,183)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-184"
+  onmousedown="return clickSq(event,184)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-185"
+  onmousedown="return clickSq(event,185)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-186"
+  onmousedown="return clickSq(event,186)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-187"
+  onmousedown="return clickSq(event,187)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-188"
+  onmousedown="return clickSq(event,188)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-189"
+  onmousedown="return clickSq(event,189)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-190"
+  onmousedown="return clickSq(event,190)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-191"
+  onmousedown="return clickSq(event,191)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-192"
+  onmousedown="return clickSq(event,192)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-193"
+  onmousedown="return clickSq(event,193)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-194"
+  onmousedown="return clickSq(event,194)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-195"
+  onmousedown="return clickSq(event,195)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-196"
+  onmousedown="return clickSq(event,196)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-197"
+  onmousedown="return clickSq(event,197)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-198"
+  onmousedown="return clickSq(event,198)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-199"
+  onmousedown="return clickSq(event,199)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-200"
+  onmousedown="return clickSq(event,200)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-201"
+  onmousedown="return clickSq(event,201)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-202"
+  onmousedown="return clickSq(event,202)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-203"
+  onmousedown="return clickSq(event,203)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-204"
+  onmousedown="return clickSq(event,204)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-205"
+  onmousedown="return clickSq(event,205)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-206"
+  onmousedown="return clickSq(event,206)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-207"
+  onmousedown="return clickSq(event,207)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-208"
+  onmousedown="return clickSq(event,208)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-209"
+  onmousedown="return clickSq(event,209)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-210"
+  onmousedown="return clickSq(event,210)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-211"
+  onmousedown="return clickSq(event,211)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-212"
+  onmousedown="return clickSq(event,212)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-213"
+  onmousedown="return clickSq(event,213)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-214"
+  onmousedown="return clickSq(event,214)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-215"
+  onmousedown="return clickSq(event,215)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-216"
+  onmousedown="return clickSq(event,216)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-217"
+  onmousedown="return clickSq(event,217)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-218"
+  onmousedown="return clickSq(event,218)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-219"
+  onmousedown="return clickSq(event,219)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-220"
+  onmousedown="return clickSq(event,220)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-221"
+  onmousedown="return clickSq(event,221)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-222"
+  onmousedown="return clickSq(event,222)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-223"
+  onmousedown="return clickSq(event,223)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-224"
+  onmousedown="return clickSq(event,224)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-225"
+  onmousedown="return clickSq(event,225)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-226"
+  onmousedown="return clickSq(event,226)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-227"
+  onmousedown="return clickSq(event,227)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-228"
+  onmousedown="return clickSq(event,228)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-229"
+  onmousedown="return clickSq(event,229)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-230"
+  onmousedown="return clickSq(event,230)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-231"
+  onmousedown="return clickSq(event,231)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-232"
+  onmousedown="return clickSq(event,232)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-233"
+  onmousedown="return clickSq(event,233)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-234"
+  onmousedown="return clickSq(event,234)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-235"
+  onmousedown="return clickSq(event,235)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-236"
+  onmousedown="return clickSq(event,236)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-237"
+  onmousedown="return clickSq(event,237)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-238"
+  onmousedown="return clickSq(event,238)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-239"
+  onmousedown="return clickSq(event,239)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-240"
+  onmousedown="return clickSq(event,240)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-241"
+  onmousedown="return clickSq(event,241)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-242"
+  onmousedown="return clickSq(event,242)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-243"
+  onmousedown="return clickSq(event,243)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-244"
+  onmousedown="return clickSq(event,244)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-245"
+  onmousedown="return clickSq(event,245)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-246"
+  onmousedown="return clickSq(event,246)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-247"
+  onmousedown="return clickSq(event,247)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-248"
+  onmousedown="return clickSq(event,248)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-249"
+  onmousedown="return clickSq(event,249)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-250"
+  onmousedown="return clickSq(event,250)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-251"
+  onmousedown="return clickSq(event,251)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-252"
+  onmousedown="return clickSq(event,252)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-253"
+  onmousedown="return clickSq(event,253)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-254"
+  onmousedown="return clickSq(event,254)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-255"
+  onmousedown="return clickSq(event,255)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-256"
+  onmousedown="return clickSq(event,256)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-257"
+  onmousedown="return clickSq(event,257)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-258"
+  onmousedown="return clickSq(event,258)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-259"
+  onmousedown="return clickSq(event,259)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-260"
+  onmousedown="return clickSq(event,260)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-261"
+  onmousedown="return clickSq(event,261)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-262"
+  onmousedown="return clickSq(event,262)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-263"
+  onmousedown="return clickSq(event,263)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-264"
+  onmousedown="return clickSq(event,264)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-265"
+  onmousedown="return clickSq(event,265)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-266"
+  onmousedown="return clickSq(event,266)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-267"
+  onmousedown="return clickSq(event,267)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-268"
+  onmousedown="return clickSq(event,268)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-269"
+  onmousedown="return clickSq(event,269)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-270"
+  onmousedown="return clickSq(event,270)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-271"
+  onmousedown="return clickSq(event,271)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-272"
+  onmousedown="return clickSq(event,272)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-273"
+  onmousedown="return clickSq(event,273)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-274"
+  onmousedown="return clickSq(event,274)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-275"
+  onmousedown="return clickSq(event,275)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-276"
+  onmousedown="return clickSq(event,276)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-277"
+  onmousedown="return clickSq(event,277)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-278"
+  onmousedown="return clickSq(event,278)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-279"
+  onmousedown="return clickSq(event,279)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-280"
+  onmousedown="return clickSq(event,280)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-281"
+  onmousedown="return clickSq(event,281)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-282"
+  onmousedown="return clickSq(event,282)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-283"
+  onmousedown="return clickSq(event,283)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-284"
+  onmousedown="return clickSq(event,284)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-285"
+  onmousedown="return clickSq(event,285)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-286"
+  onmousedown="return clickSq(event,286)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-287"
+  onmousedown="return clickSq(event,287)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-288"
+  onmousedown="return clickSq(event,288)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-289"
+  onmousedown="return clickSq(event,289)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-290"
+  onmousedown="return clickSq(event,290)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-291"
+  onmousedown="return clickSq(event,291)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-292"
+  onmousedown="return clickSq(event,292)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-293"
+  onmousedown="return clickSq(event,293)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-294"
+  onmousedown="return clickSq(event,294)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-295"
+  onmousedown="return clickSq(event,295)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-296"
+  onmousedown="return clickSq(event,296)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-297"
+  onmousedown="return clickSq(event,297)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-298"
+  onmousedown="return clickSq(event,298)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-299"
+  onmousedown="return clickSq(event,299)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-300"
+  onmousedown="return clickSq(event,300)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-301"
+  onmousedown="return clickSq(event,301)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-302"
+  onmousedown="return clickSq(event,302)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-303"
+  onmousedown="return clickSq(event,303)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-304"
+  onmousedown="return clickSq(event,304)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-305"
+  onmousedown="return clickSq(event,305)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-306"
+  onmousedown="return clickSq(event,306)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-307"
+  onmousedown="return clickSq(event,307)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-308"
+  onmousedown="return clickSq(event,308)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-309"
+  onmousedown="return clickSq(event,309)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-310"
+  onmousedown="return clickSq(event,310)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-311"
+  onmousedown="return clickSq(event,311)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-312"
+  onmousedown="return clickSq(event,312)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-313"
+  onmousedown="return clickSq(event,313)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-314"
+  onmousedown="return clickSq(event,314)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-315"
+  onmousedown="return clickSq(event,315)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-316"
+  onmousedown="return clickSq(event,316)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-317"
+  onmousedown="return clickSq(event,317)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-318"
+  onmousedown="return clickSq(event,318)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-319"
+  onmousedown="return clickSq(event,319)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-320"
+  onmousedown="return clickSq(event,320)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-321"
+  onmousedown="return clickSq(event,321)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-322"
+  onmousedown="return clickSq(event,322)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-323"
+  onmousedown="return clickSq(event,323)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-324"
+  onmousedown="return clickSq(event,324)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-325"
+  onmousedown="return clickSq(event,325)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-326"
+  onmousedown="return clickSq(event,326)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-327"
+  onmousedown="return clickSq(event,327)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-328"
+  onmousedown="return clickSq(event,328)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-329"
+  onmousedown="return clickSq(event,329)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-330"
+  onmousedown="return clickSq(event,330)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-331"
+  onmousedown="return clickSq(event,331)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-332"
+  onmousedown="return clickSq(event,332)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-333"
+  onmousedown="return clickSq(event,333)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-334"
+  onmousedown="return clickSq(event,334)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-335"
+  onmousedown="return clickSq(event,335)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-336"
+  onmousedown="return clickSq(event,336)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-337"
+  onmousedown="return clickSq(event,337)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-338"
+  onmousedown="return clickSq(event,338)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-339"
+  onmousedown="return clickSq(event,339)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-340"
+  onmousedown="return clickSq(event,340)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-341"
+  onmousedown="return clickSq(event,341)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-342"
+  onmousedown="return clickSq(event,342)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-343"
+  onmousedown="return clickSq(event,343)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-344"
+  onmousedown="return clickSq(event,344)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-345"
+  onmousedown="return clickSq(event,345)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-346"
+  onmousedown="return clickSq(event,346)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-347"
+  onmousedown="return clickSq(event,347)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-348"
+  onmousedown="return clickSq(event,348)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-349"
+  onmousedown="return clickSq(event,349)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-350"
+  onmousedown="return clickSq(event,350)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-351"
+  onmousedown="return clickSq(event,351)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-352"
+  onmousedown="return clickSq(event,352)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-353"
+  onmousedown="return clickSq(event,353)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-354"
+  onmousedown="return clickSq(event,354)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-355"
+  onmousedown="return clickSq(event,355)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-356"
+  onmousedown="return clickSq(event,356)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-357"
+  onmousedown="return clickSq(event,357)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-358"
+  onmousedown="return clickSq(event,358)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-359"
+  onmousedown="return clickSq(event,359)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-360"
+  onmousedown="return clickSq(event,360)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-361"
+  onmousedown="return clickSq(event,361)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-362"
+  onmousedown="return clickSq(event,362)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-363"
+  onmousedown="return clickSq(event,363)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-364"
+  onmousedown="return clickSq(event,364)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-365"
+  onmousedown="return clickSq(event,365)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-366"
+  onmousedown="return clickSq(event,366)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-367"
+  onmousedown="return clickSq(event,367)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-368"
+  onmousedown="return clickSq(event,368)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-369"
+  onmousedown="return clickSq(event,369)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-370"
+  onmousedown="return clickSq(event,370)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-371"
+  onmousedown="return clickSq(event,371)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-372"
+  onmousedown="return clickSq(event,372)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-373"
+  onmousedown="return clickSq(event,373)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-374"
+  onmousedown="return clickSq(event,374)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-375"
+  onmousedown="return clickSq(event,375)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-376"
+  onmousedown="return clickSq(event,376)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-377"
+  onmousedown="return clickSq(event,377)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-378"
+  onmousedown="return clickSq(event,378)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-379"
+  onmousedown="return clickSq(event,379)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-380"
+  onmousedown="return clickSq(event,380)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-381"
+  onmousedown="return clickSq(event,381)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-382"
+  onmousedown="return clickSq(event,382)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-383"
+  onmousedown="return clickSq(event,383)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-384"
+  onmousedown="return clickSq(event,384)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-385"
+  onmousedown="return clickSq(event,385)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-386"
+  onmousedown="return clickSq(event,386)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-387"
+  onmousedown="return clickSq(event,387)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-388"
+  onmousedown="return clickSq(event,388)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-389"
+  onmousedown="return clickSq(event,389)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-390"
+  onmousedown="return clickSq(event,390)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-391"
+  onmousedown="return clickSq(event,391)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-392"
+  onmousedown="return clickSq(event,392)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-393"
+  onmousedown="return clickSq(event,393)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-394"
+  onmousedown="return clickSq(event,394)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-395"
+  onmousedown="return clickSq(event,395)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-396"
+  onmousedown="return clickSq(event,396)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-397"
+  onmousedown="return clickSq(event,397)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-398"
+  onmousedown="return clickSq(event,398)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-399"
+  onmousedown="return clickSq(event,399)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-400"
+  onmousedown="return clickSq(event,400)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-401"
+  onmousedown="return clickSq(event,401)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-402"
+  onmousedown="return clickSq(event,402)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-403"
+  onmousedown="return clickSq(event,403)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-404"
+  onmousedown="return clickSq(event,404)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-405"
+  onmousedown="return clickSq(event,405)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-406"
+  onmousedown="return clickSq(event,406)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-407"
+  onmousedown="return clickSq(event,407)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-408"
+  onmousedown="return clickSq(event,408)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-409"
+  onmousedown="return clickSq(event,409)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-410"
+  onmousedown="return clickSq(event,410)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-411"
+  onmousedown="return clickSq(event,411)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-412"
+  onmousedown="return clickSq(event,412)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-413"
+  onmousedown="return clickSq(event,413)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-414"
+  onmousedown="return clickSq(event,414)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-415"
+  onmousedown="return clickSq(event,415)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-416"
+  onmousedown="return clickSq(event,416)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-417"
+  onmousedown="return clickSq(event,417)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-418"
+  onmousedown="return clickSq(event,418)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-419"
+  onmousedown="return clickSq(event,419)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-420"
+  onmousedown="return clickSq(event,420)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-421"
+  onmousedown="return clickSq(event,421)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-422"
+  onmousedown="return clickSq(event,422)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-423"
+  onmousedown="return clickSq(event,423)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-424"
+  onmousedown="return clickSq(event,424)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-425"
+  onmousedown="return clickSq(event,425)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-426"
+  onmousedown="return clickSq(event,426)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-427"
+  onmousedown="return clickSq(event,427)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-428"
+  onmousedown="return clickSq(event,428)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-429"
+  onmousedown="return clickSq(event,429)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-430"
+  onmousedown="return clickSq(event,430)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-431"
+  onmousedown="return clickSq(event,431)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-432"
+  onmousedown="return clickSq(event,432)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-433"
+  onmousedown="return clickSq(event,433)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-434"
+  onmousedown="return clickSq(event,434)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-435"
+  onmousedown="return clickSq(event,435)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-436"
+  onmousedown="return clickSq(event,436)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-437"
+  onmousedown="return clickSq(event,437)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-438"
+  onmousedown="return clickSq(event,438)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-439"
+  onmousedown="return clickSq(event,439)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-440"
+  onmousedown="return clickSq(event,440)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-441"
+  onmousedown="return clickSq(event,441)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-442"
+  onmousedown="return clickSq(event,442)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-443"
+  onmousedown="return clickSq(event,443)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-444"
+  onmousedown="return clickSq(event,444)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-445"
+  onmousedown="return clickSq(event,445)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-446"
+  onmousedown="return clickSq(event,446)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-447"
+  onmousedown="return clickSq(event,447)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-448"
+  onmousedown="return clickSq(event,448)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-449"
+  onmousedown="return clickSq(event,449)"
+  >&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS=sq ID="sq-450"
+  onmousedown="return clickSq(event,450)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-451"
+  onmousedown="return clickSq(event,451)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-452"
+  onmousedown="return clickSq(event,452)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-453"
+  onmousedown="return clickSq(event,453)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-454"
+  onmousedown="return clickSq(event,454)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-455"
+  onmousedown="return clickSq(event,455)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-456"
+  onmousedown="return clickSq(event,456)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-457"
+  onmousedown="return clickSq(event,457)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-458"
+  onmousedown="return clickSq(event,458)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-459"
+  onmousedown="return clickSq(event,459)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-460"
+  onmousedown="return clickSq(event,460)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-461"
+  onmousedown="return clickSq(event,461)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-462"
+  onmousedown="return clickSq(event,462)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-463"
+  onmousedown="return clickSq(event,463)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-464"
+  onmousedown="return clickSq(event,464)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-465"
+  onmousedown="return clickSq(event,465)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-466"
+  onmousedown="return clickSq(event,466)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-467"
+  onmousedown="return clickSq(event,467)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-468"
+  onmousedown="return clickSq(event,468)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-469"
+  onmousedown="return clickSq(event,469)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-470"
+  onmousedown="return clickSq(event,470)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-471"
+  onmousedown="return clickSq(event,471)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-472"
+  onmousedown="return clickSq(event,472)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-473"
+  onmousedown="return clickSq(event,473)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-474"
+  onmousedown="return clickSq(event,474)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-475"
+  onmousedown="return clickSq(event,475)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-476"
+  onmousedown="return clickSq(event,476)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-477"
+  onmousedown="return clickSq(event,477)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-478"
+  onmousedown="return clickSq(event,478)"
+  >&nbsp;</TD>
+<TD CLASS=sq ID="sq-479"
+  onmousedown="return clickSq(event,479)"
+  >&nbsp;</TD>
+</TR>
+</TABLE>
+<!-- End of script-generated HTML -->
+<DIV CLASS=column>
+<DIV CLASS=title>
+<IMG SRC="../titles/minesweeper.png" ALT="Minesweeper">
+</DIV>
+<DIV ID=expert CLASS=contents>
+This is the expert version.  You might want to try the
+<A HREF="./">beginner</A> or <A HREF="intermediate.php">intermediate</A>
+versions first.
+The documentation is on the <A HREF="./">beginner</A> page.
+</DIV>
+</DIV>
+<HR CLASS=decoration>
+<!-- links.txt -->
+<TABLE CLASS=links><TR>
+<TD CLASS=linkLeft ROWSPAN=2><B><A HREF="../">Home</A></B></TD>
+<TD CLASS=linkBars ROWSPAN=2></TD>
+<TD CLASS=links>
+    <A HREF="../minesweeper/">Minesweeper</A> |
+    <A HREF="../ishido/">Ishido</A> |
+    <A HREF="../sokoban/">Sokoban</A> |
+    <A HREF="../alice/">Alice</A> |
+    <A HREF="../reliefMaps/">USA Maps</A></TD>
+<TD CLASS=linkBars ROWSPAN=2></TD>
+<TD CLASS=linkRight ROWSPAN=2>
+<A CLASS=validator HREF="http://validator.w3.org/check/referer">&#10003;</A>
+</TD>
+</TR><TR>
+<TD CLASS=links>
+    <A HREF="../images/">Images</A> |
+    <A HREF="../knotwork/">Knotwork</A> |
+    <A HREF="../decorations/">Decorations</A> |
+    <A HREF="../../photos/">Photos</A> |
+    <A HREF="../../tree/">Family Tree</A> |
+    <A HREF="../me/">Me</A></TD>
+</TR></TABLE>
+<!-- end of links.txt -->
+</BODY>
+</HTML>
